@@ -1,0 +1,7 @@
+{
+    "Striker": {
+        "password": "$2b$12$P5C4ywhLcV90riB1sDKKE.zjAp971/PmDpLkhWADo4plRDPFfoDVK",
+        "data_file": "Striker_data.json",
+        "is_admin": true
+    }
+}
