@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head><title>Empfehlungen</title></head>
+<body>
+    <h1>Anime-Empfehlungen</h1>
+    <form method="POST">
+        {% for i, anime in anime_db|enumerate %}
+            <label>{{ anime.title }}: 
+                <input type="number" name="{{ i }}" min="1" max="10" value="{{ feedback[i] or '' }}">
+            </label><br>
+        {% endfor %}
+        <input type="submit" value="Bewertungen speichern und Empfehlungen anzeigen">
+    </form>
+    {% if recommendations %}
+        <h2>Top-Empfehlungen</h2>
+        <ul>
+        {% for anime, score, _, _ in recommendations %}
+            <li>{{ anime.title }} (Score: {{ "%.2f"|format(score) }})</li>
+        {% endfor %}
+        </ul>
+    {% endif %}
+</body>
+</html>
